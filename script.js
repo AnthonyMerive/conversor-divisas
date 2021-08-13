@@ -47,6 +47,7 @@ button.addEventListener("click", e =>{
     Swal.fire("Revise sus datos");
   }
   else{
+  
     result.innerHTML = (values[divisaSelected-1][divisaConvert] * currValue).toFixed(2);
     symbol.innerHTML = symbols[divisaConvert-1];
   }
