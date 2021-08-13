@@ -11,14 +11,16 @@
 </head>
 
 <body>
-    <form id="form" class ="container" action="">
+    <form id="form" class="container" action="">
         <div class="container">
             <h2 class="mb-3">Conversor</h2>
             <div class="input-group mb-3">
-                <input id="inputoMoneda" type="text" class="form-control"
+                <input id="inputMoneda" type="text" class="form-control"
                     aria-label="Dollar amount (with dot and two decimal places)">
-                <span class="input-group-text">$</span>
+                <span id="signo" class="input-group-text"></span>
                 <span id="result" class="input-group-text"></span>
+                <span id="signoA" class="input-group-text"></span>
+
             </div>
             <div class="mb-3">
                 <select id="monedaSelected" class="form-select" aria-label="Default select example">
@@ -31,10 +33,11 @@
                     <!--aca se agregaran los option desde Script.js-->
                 </select>
             </div>
-            <button type="button" class="btn btn-primary">Convertir</button>
+            <button type="submit" class="btn btn-primary">Convertir</button>
     </form>
-    <script src="./script.js"></script>
     </div>
+
+    <script src="./script.js"></script>
 </body>
 
 </html>
