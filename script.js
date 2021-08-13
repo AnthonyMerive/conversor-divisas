@@ -22,10 +22,16 @@ let symbols = ["$", "$", "$", "€", "£"]
 
 /*----- Generar Opciones de <select> -----*/
 function generateOptions(formDivisa){
+  let fragment  = document.createDocumentFragment();
+
   divisa.forEach((data, idx) => {
-    let option = new Option(data, idx);
-    formDivisa.add(option);
+    let option = document.createElement("option");
+    option.setAttribute("value", idx);
+    option.textContent = data;
+    fragment.appendChild(option);
   });
+
+  formDivisa.appendChild(fragment);
 }
 
 generateOptions(divisaIn);
@@ -47,7 +53,6 @@ button.addEventListener("click", e =>{
     Swal.fire("Revise sus datos");
   }
   else{
-  
     result.innerHTML = (values[divisaSelected-1][divisaConvert] * currValue).toFixed(2);
     symbol.innerHTML = symbols[divisaConvert-1];
   }
